@@ -17,7 +17,7 @@ for star_row in range(row):
         # 6. 가로줄의 원소가 조건에 따라 별을 출력, 그 이외에는 공백
         # 조건 : 맨 꼭대기층(star_row값이 0) 또는 가로줄의 원소가 첫번째 또는 마지막 원소에서 앞에 있는 원소
         # 첫번째 원소는 2*((row-star_row))부터 시작하므로 해당 값이고
-        # 마지막 원소는 항상 range(2,1,-1)이 되어 [2,1] 값이 나오므로 star_col == 2가 된다
+        # 마지막 원소는 항상 range(2,1,-1)이 되어 [2] 값이 나오므로 star_col == 2가 된다
         if star_row == 0 or star_col == 2*(row-star_row) or star_col == 2:
             print("*", end="")
         else:
