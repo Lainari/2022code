@@ -16,3 +16,4 @@ for star_row in range(5):
         for star_col in range(row-star_row):
             print("*",end="")
         print()
+        
