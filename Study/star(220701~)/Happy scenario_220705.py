@@ -11,5 +11,20 @@ count = 1
 # 1. while 문을 통해 프로그램이 계속 지속될 것, 20000인 경우에는 종료
 while num_value != 20000:
     num_value = int(input())
-    print(count,"번째 입력값은 = ",num_value)
+    if num_value == 20000:
+        break
+    if num_value <= 0:
+        print("1 이상의 양수를 입력해주세요")
+        continue
+    else:
+        print(count,"번째 입력값은 = ",num_value)
+        if num_value % 2 == 0:
+            print("짝수 입니다.")
+        else:
+            print("홀수 입니다.")
+        if num_value % 3 == 0:
+            print("3의 배수입니다.")
+        elif num_value % 7 == 0:
+            print("7의 배수입니다.")
+        count+=1
 print("이용해주셔서 감사합니다.")
