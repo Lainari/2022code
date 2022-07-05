@@ -7,14 +7,17 @@
 # 1 2
 # 1 2 3
 
-# 0. 층 입력받기
-row = int(input("양의 정수를 입력해주세요 : "))
+# 0. 층수와 세로줄, 가로줄의 초기값을 지정해준다
+num = 11
+num_row = 1
+num_col = 1
 
-# 1. 세로층 만들기
-for num_row in range(1,row+1):
-    # 2. 가로층 만들기, 초기값은 1이고 최대값은 해당 세로줄의 번째
-    for num_col in range(1, num_row+1):
-        # 3. 숫자출력, 띄워쓰기 1칸 및 줄바꿈X
-        print(num_col, end=" ")
-    # 4. 가로줄 종료로 줄바꿈
+# 1. 세로줄 반복 시작
+while num_row <= num:
+    # 2. 가로줄 반복 시작
+    while num_col <= num_row:
+        print(num_col," ", end="")
+        num_col+=1
     print()
+    num_col = 1
+    num_row +=1
