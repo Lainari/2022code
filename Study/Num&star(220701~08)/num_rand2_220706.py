@@ -7,7 +7,7 @@ for value in range(10):
 
 print("----------------------------")
 
-# -5 ~ 10 정수 랜덤값
+# -5 ~ 5 정수 랜덤값
 for value in range(50):
     num = int(random.random()*11)-5
     print(num)
