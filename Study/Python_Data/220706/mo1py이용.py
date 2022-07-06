@@ -10,3 +10,11 @@ from mo1 import add
 print(add(3,4))
 from mo1 import sub
 print(sub(4,2))
+
+print()
+import mo1 as add
+import mo1 as sub
+ex = add.add(3,4)
+ex2 = sub.sub(4,2)
+print(ex)
+print(ex2)
