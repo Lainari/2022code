@@ -14,10 +14,35 @@
 # Abstract Data Type : -> List
 # 학생 100 명의 성적을 입력 받아 평균을 계산하시오.
 
-student_1 = 10
-student_2 = 20
-student_3 = 5
-student_4 = 60
-student_5 = 100
 
 
+# CRUD
+#  - Create
+#  - Read
+#  - Update
+#  - Delete
+
+
+# Create : 값을 생성
+# 초기값
+# myList = [3, 4, 5, 2.0, True, "Test"]
+
+# # 매소드 append 이용 : 제일 마지막 원소 뒤에 추가
+# myList.append(20)
+
+# # insert : 지정된 위치에 추가
+# myList.insert(1, 80)
+
+# Read
+myList = [3, 4, 5, 2.0, True, "Test"]
+
+# 변수의 동작 모드는 두 가지
+# GET, SET
+# test = 2
+# print(test) <- Get Mode
+# test = 3 <- Set Mode
+
+# [ ] 연산자를 이용합니다.
+print(myList[1])
+
+myList[1] = 1000
