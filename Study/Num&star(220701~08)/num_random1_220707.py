@@ -46,3 +46,16 @@ myList = [3, 4, 5, 2.0, True, "Test"]
 print(myList[1])
 
 myList[1] = 1000
+
+for value in myList:
+    print(value)
+
+print("-"*10)
+
+index = 0
+
+while index < len(myList):
+    print(myList[index])
+    index +=1
+
+print(myList)
