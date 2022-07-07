@@ -46,4 +46,7 @@ list_avg = list_sum / 20
 print("합계 : ",list_sum)
 print("평균 : ",list_avg)
 # 3. List 내 중복 값과 중복 횟수 정보 출력[중복 값 중복 횟수]
+count = 1
+overlap = 0
+    
 # 4. 구간 별 히스토그램 정보 출력[1~5 : *개, 6~10 : *개 ...]
