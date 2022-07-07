@@ -1,2 +1,14 @@
-# 1 ~ 10 사이 난수 5개를 List에 저장 후
-# 난수 값을 출력하라.
+myList = [5, 10, 15, 20]
+
+
+for value in myList:
+    print(value)
+
+# del
+del myList[2]
+# remove
+
+print("-"*10)
+
+for value in myList:
+    print(value)
