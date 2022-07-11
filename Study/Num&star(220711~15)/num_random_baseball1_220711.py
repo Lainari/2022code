@@ -11,10 +11,10 @@ while len(gameList) < 3:
 
 # • 키보드로부터 0~9사이 정수 3개를 입력 받고 결과 값을 출력 (예외처리 X)
 play = True
+playCount = 1
 while play:
-    playCount = 1
     playerList = []
-
+    print("시도횟수 : ",playCount)
     print("정수 3개를 입력하세용~~^_^")
     while len(playerList) < 3:
         playerList.append(int(input()))
@@ -33,14 +33,33 @@ while play:
         elif playerList[check] in gameList:
             ball += 1
         
-        if strike == 0 and ball == 0:
-            strikeOut += 1
-            if strikeOut == 1:
-                print("Out : 아웃 1번")
-            else: # strikeOut 2가 되면 탈출
-                play = False
+    if strike == 0 and ball == 0:
+        strikeOut += 1
+        if strikeOut == 1:
+            print("Out : 아웃 1번")
+        else: # strikeOut 2가 되면 탈출
+            play = False
+    else:
+        if strike > 0 and ball <= 0:
+            print(strike," Strike")
+        elif strike <= 0 and ball > 0:
+            print(ball," Ball")
+        else:
+            print(strike," Strike", ball," Ball")
     playCount += 1
     if playCount == 5:
         play = False # playCount가 5가 되면 탈출
+        
 # • 아래 경우 게임 Lose – 시도 횟수 >= 5 or – Strike out == 2
 # • 아래 경우 게임 Win – 컴퓨터에서 생성 한 난수 값을 자리 순서대로 맞출 경우
+if strike == 3:
+    print("성공입니다~!! ^_^")
+    print("정답 : ",gameList)
+elif playCount == 5:
+    print("게임회수 초과")
+    print("아까비~~~졌네용..")
+    print("정답은 : ",gameList)
+else:
+    print("2 스트라이크 아웃!! ㅠㅠ")
+    print("아까비~~~졌네용..")
+    print("정답은 : ",gameList)
