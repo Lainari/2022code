@@ -35,7 +35,7 @@ while play:
                 strike += 1
             else:
                 ball += 1
-    # • 아래 경우 게임 Lose – 시도 횟수 >= 5
+    # • 아래 경우 게임 Lose – Strike out == 2
     if strike == 0 and ball == 0:
         strikeOut += 1
         if strikeOut > 1:
@@ -51,12 +51,13 @@ while play:
         play=False
         print("정답입니다~~^_^")
         print("정답은 : ",gameList," 입니다!")
+        break
     else: # 정답이 아닌 경우에는 strike와 ball를 출력
         if strike > 0:
             print(strike, " Strike")
         if ball > 0:
             print(ball," Ball")
-    # • 아래 경우 게임 Lose – Strike out == 2
+    # • 아래 경우 게임 Lose – 시도 횟수 >= 5
     playCount += 1
     if playCount > 4:
         play = False
