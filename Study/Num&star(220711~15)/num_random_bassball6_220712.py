@@ -3,6 +3,7 @@ import random
 
 # 난수 리스트 생성
 gameList = []
+
 # 난수 3개 생성할 동안 중복값 판별
 while len(gameList) < 3:
     check = random.randint(0,9)
@@ -13,9 +14,18 @@ while len(gameList) < 3:
 
 # 게임이 특정 조건을 만족하기 전에는 계속 실행
 strikeOut = 0
-playCount = 1
+playCount = 0
 
 while True:
+
+    # 게임횟수를 증가 시키고 조건 값보다 높으면 게임은 종료된다
+    playCount += 1
+    if playCount >= 5:
+        print("게임횟수 초과")
+        print("아까비~~~졌네용..")
+        print("정답은 : ",gameList,"입니다")
+        break
+
     # 키보드로부터 정수 3개 입력받기
     playerList=[]
     print("시도횟수 : ",playCount)
@@ -37,43 +47,34 @@ while True:
             else:
                 ball += 1
         # 해당 값이 없으면 다음 순번으로 넘어가기
-        else:
-            continue
 
-    # 판별이 끝나고 strike 와 ball의 값에 따라 msg 출력
-    if strike > 0:
-        # 스트라이크가 만약 3회라면 게임은 종료된다, 아니면 strike 값만 표출
-        if strike == 3:
-            print("승리~!!! *^o^* ")
-            print("정답   : ",gameList)
-            print("입력값 : ",playerList)
-            break
-        print(strike," Strike",end=" ")
-        # 볼 값에 따른 msg 출력
-    if ball > 0:
-        print(ball," Ball",end=" ")
-    print()
+    # 스트라이크가 만약 3회라면 게임은 종료된다, 아니면 strike 값과 ball 값을 표출
+    if strike == 3:
+        print("승리~!!! *^o^* ")
+        print("정답   : ",gameList)
+        print("입력값 : ",playerList)
+        break
 
-    # 만일 둘다 0인 경우 (전 원소 불일치) 아웃 카운트 증가
-    if strike == 0 and ball == 0:
-        strikeOut += 1
+    # strike 값과 ball 값에 따라 표출하는 msg
+    else:
+        if strike > 0:
+            print(strike," Strike",end=" ")
+        if ball > 0:
+            print(ball," Ball",end=" ")
+        print()
 
-        # 증가한 Out 카운트가 2 이상이라면 게임은 종료 된다
-        if strikeOut > 1:
-            print("2스트라이크 아웃입니다! ㅠㅠ")
-            print("아까비~~~졌네용..")
-            print("정답은 : ",gameList,"입니다")
-            break
+        # 만일 둘다 0인 경우 (전 원소 불일치) 아웃 카운트 증가
+        if strike == 0 and ball == 0:
+            strikeOut += 1
 
-        # 아닐 경우 Out 카운트가 1번밖에 안났으므로 해당msg 출력
-        else:
+            # 증가한 Out 카운트가 2 이상이라면 게임은 종료 된다
+            if strikeOut > 1:
+                print("2스트라이크 아웃입니다! ㅠㅠ")
+                print("아까비~~~졌네용..")
+                print("정답은 : ",gameList,"입니다")
+                break
+
+            # 아닐 경우 Out 카운트가 1번밖에 안났으므로 해당msg 출력
             print("Out : 아웃 1번")
 
-    # strike, ball, strikeOut 판별식 종료 후 게임횟수를 증가 시키고 조건 값보다 높으면 게임은 종료된다
-    playCount += 1
-    if playCount >= 5:
-        print("게임횟수 초과")
-        print("아까비~~~졌네용..")
-        print("정답은 : ",gameList,"입니다")
-        break
-    # 해당 조건이 해당되지 않는다면 다시 게임 초기 상태로 돌아간다
+    # strike, ball, strikeOut 판별식 종료 후 해당 조건이 해당되지 않는다면 다시 게임 초기 상태로 돌아간다
