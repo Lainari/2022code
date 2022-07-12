@@ -55,6 +55,20 @@ while True:
         print("입력값 : ",playerList)
         break
 
+    # 만일 둘다 0인 경우 (전 원소 불일치) 아웃 카운트 증가
+    elif strike == 0 and ball == 0:
+        strikeOut += 1
+
+        # 증가한 Out 카운트가 2 이상이라면 게임은 종료 된다
+        if strikeOut >= 2:
+            print("2스트라이크 아웃입니다! ㅠㅠ")
+            print("아까비~~~졌네용..")
+            print("정답은 : ",gameList,"입니다")
+            break
+
+        # 아닐 경우 Out 카운트가 1번밖에 안났으므로 해당msg 출력
+        print("Out : 아웃 1번")
+
     # strike 값과 ball 값에 따라 표출하는 msg
     else:
         if strike > 0:
@@ -62,19 +76,5 @@ while True:
         if ball > 0:
             print(ball," Ball",end=" ")
         print()
-
-        # 만일 둘다 0인 경우 (전 원소 불일치) 아웃 카운트 증가
-        if strike == 0 and ball == 0:
-            strikeOut += 1
-
-            # 증가한 Out 카운트가 2 이상이라면 게임은 종료 된다
-            if strikeOut > 1:
-                print("2스트라이크 아웃입니다! ㅠㅠ")
-                print("아까비~~~졌네용..")
-                print("정답은 : ",gameList,"입니다")
-                break
-
-            # 아닐 경우 Out 카운트가 1번밖에 안났으므로 해당msg 출력
-            print("Out : 아웃 1번")
 
     # strike, ball, strikeOut 판별식 종료 후 해당 조건이 해당되지 않는다면 다시 게임 초기 상태로 돌아간다
