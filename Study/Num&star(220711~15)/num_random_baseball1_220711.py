@@ -43,7 +43,7 @@ while play:
             break
         else:
             print("Out : 아웃 1번")
-    if strike > 0:
+    if 3 > strike > 0:
         print(strike," Strike",end=" ")
     if ball > 0:
         print(ball," Ball")
