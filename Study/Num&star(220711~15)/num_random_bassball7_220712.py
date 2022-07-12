@@ -57,13 +57,14 @@ while True:
         print("입력값 : ",playerList,"입니다.")
         break
 
+    # 만약 둘다 0일 경우는 strikeOut 값을 증가 시킨다
+    elif strike == 0 and ball == 0:
+        strikeOut += 1
+
     # 그외의 경우엔 해당 값에 따른 msg 출력
     else:
         if strike > 0:
             print(strike," Strike",end=" ")
         if ball > 0:
             print(ball," Ball",end=" ")
-        # 만약 둘다 0일 경우
-        if strike == 0 and ball == 0:
-            strikeOut += 1
     print()
