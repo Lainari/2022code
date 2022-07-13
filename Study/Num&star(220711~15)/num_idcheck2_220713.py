@@ -15,9 +15,8 @@ for value in range(13):
         count+=1
 
 # sum 값에 따른 유효성 체크
-check = 11-(sum % 11)
-
-if check == int(userNum[-1]) or check % 10 == int(userNum[-1]):
+check = 11-(sum % 11) % 10
+if check == int(userNum[-1]):
     print("유효한 주민번호 입니다")
 else:
     print("유효하지않은 주민번호 입니다")
