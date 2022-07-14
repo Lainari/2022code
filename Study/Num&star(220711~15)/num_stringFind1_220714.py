@@ -15,6 +15,7 @@ while True:
     for index in range(inputValue): # N번째 문자열 라인만큼 검사하는 반복문
         if findWord in inputList[index]:
             findLine.append(index+1)
+        find = 0
         for word in inputList: # 입력한 문자열 라인의 원소를 추출하는 반복문
             if findWord in word: # 만일 문자열 라인의 원소 안에 찾고자 하는 단어가 있으면 단어의 수, 줄, 총 검색 카운트를 증가
                 blankCount = 0
@@ -24,7 +25,12 @@ while True:
                         if blankCount == 1: # 1이 아닌 경우에는 연속으로 띄워쓰기가 된 것이므로 단어수는 카운트 안한다
                             # 결국 띄워쓰기가 1에서만 단어수 카운트
                             wordCount+=1
-            
+        for findCheck in range(len(word)):
+            if findWord[find] == word[findCheck]:
+                find += 1
+                if find == len(findWord):
+                    findWordCount += 1
+                    find = 0
     if wordCount > 0:
         print(findWord,"를 찾았습니다.")
         print("검색된 라인 수 : ",findLine)
