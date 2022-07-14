@@ -27,7 +27,7 @@ while True:
     playerList=[]
     for value in range(3):
         playerList.append(int(input("정수를 입력해주세요 : ")))
-
+    a=0
     strike = 0
     ball = 0
 # 스트라이크, 볼 판정
