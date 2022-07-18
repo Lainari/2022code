@@ -4,6 +4,7 @@ inputValue = int(input("입력 문자열의 줄(Line) 수를 입력하세요! : 
 # 줄 수만큼 영문 문자열을 list에 저장
 inputList=[]
 count = 0
+
 for value in range(inputValue):
     count += 1
     print(count,end=" ")
@@ -11,11 +12,13 @@ for value in range(inputValue):
 
 findLine = []
 wordList = []
+
 # 찾고 싶은 문자열은 검색될 때 까지 지속된다
 while True:
     findList=input("검색 할 문자열을 입력해주세요 : ")
     count = 1
     findWordCount = 0
+
     # 문자열 검색
     for line in inputList:
         lineCount = 0
@@ -25,14 +28,14 @@ while True:
         for word in line:               # 문자열 안에 단어들을 검사
             if word != " ":             # 만약 문자열 이 공백이 아니라면 단어를 이어붙이고
                 sum += word
+
             else:
                 if sum !="":            # 공백이긴 하나 연속된 공백이라면 이어붙이지 않는다
                     wordList.append(sum)
                     if findList == sum: # 만일 단어가 내가 찾는 단어라면
                         lineCount += 1  # 검색된 라인을 검사하는 변수 값을 증가
                         findWordCount += 1 # 찾은 문자의 개수를 증가 시킨다 
-                sum=""                  # 다 끝나면 이어붙임 변수는 초기화
-                
+                sum=""                  # 다 끝나면 이어붙임 변수는 초기화                
                 
         if sum != " " and sum != "":    # 반복이 종료 될 때 마지막으로 남아있는 단어를 붙여준다(단, 공백은 안붙임)
             wordList.append(sum)
