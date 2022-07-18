@@ -1,7 +1,7 @@
 # 좌측에서 나오는 삼각형 만들기
 
 # 0. 층 생성
-row = 9
+row = 7
 
 # 1. 세로 층 생성
 for star_row in range(row):
