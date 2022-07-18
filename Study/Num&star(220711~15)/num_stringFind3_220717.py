@@ -22,7 +22,7 @@ while True:
     # 문자열 검색
     for line in inputList:
         lineCount = 0
-        
+
         # 단어 검색(단어 수와 찾고 싶은 문자열 개수 파악) & 찾고 싶은 단어가 단어 리스트에 있는지 확인  
         sum = ""                        # 문자열을 붙이기 위한 변수 생성
         for word in line:               # 문자열 안에 단어들을 검사
