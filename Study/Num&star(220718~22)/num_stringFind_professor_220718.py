@@ -10,7 +10,7 @@ textList = []
 # 문장 입력
 for index in range(num):
     textList.append(input(str(index + 1) + "번째 문장을 입력 하세요"))
-    
+
 # 검색어 입력
 findWord = input("검색 단어를 입력 하세요")
 
@@ -18,7 +18,7 @@ for row in range(num):
     stateIndex = 0
     previousChar = ""
     nextChar = ""
-    
+
     for col in range(len(textList[row])):
         nextChar = "" if col == (len(textList[row]) - 1) else textList[row][col+1]
         
@@ -38,5 +38,5 @@ for row in range(num):
         # # 매칭 실패
         # else:
         #     stateIndex = 0
-            
+
         previousChar = textList[row][col]
