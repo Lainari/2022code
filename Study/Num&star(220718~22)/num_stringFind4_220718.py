@@ -4,7 +4,7 @@ lineNum=int(input("줄 수를 입력하세요 : "))
 textList=[]
 findCount = 0
 findLine=[]
-
+wordCount = 0
 # 영문 입력
 for index in range(lineNum):
     textList.append(input(str(index+1)+"번째 문자열을 입력해주세요. : "))
@@ -46,6 +46,10 @@ while True:
             else:
                 indexNum = 0
             preWord=textList[line][word]
+            
+            # 단어 판별
+            if nextWord == " " or nextWord=="":
+                wordCount += 1
 
         if findCheck >= 1:
             findLine.append(line+1)
@@ -54,7 +58,7 @@ while True:
         print(findList,"를 찾았습니다.")
         print("검색된 라인 : ",findLine)
         print("검색된 횟수 : ",findCount)
-        print("총 단어 수 : ")
+        print("총 단어 수 : ",wordCount)
         break
     else:
         print("찾을 수가 없습니다.",end=" ")
