@@ -138,13 +138,25 @@ print("-"*100)
 # #=======================================================================================#
 # # 3. LIST 전체를 기준으로 최대, 최소, 중간 값을 출력하라.
 
-for table in range(5):
-    for row in range(5):
-        for col in range(5):
-            temp=0
-            if col > 0:
-                if rowTableList[row][col] > rowTableList[row][col-1]:
-                    temp = rowTableList[row][col]
-                    rowTableList[row][col] = rowTableList[row][col-1]
-                    rowTableList[row][col-1] = temp
-                    temp = 0
+allTable=[]
+max = 0
+min = 51
+for row in range(5):
+    for col in range(5):
+        if max < rowTableList[row][col]:
+            max = colList[row][col]
+        if min > rowTableList[row][col]:
+            min = rowTableList[row][col]
+        allTable.append(rowTableList[row][col])
+
+# for row in range(25):
+#     for col in range(25):
+#         temp=0
+#         if col > 0:
+#             if allTable[row][col] > colList[row][col-1]:
+#                 temp = colList[row][col]
+#                 colList[row][col] = colList[row][col-1]
+#                 colList[row][col-1] = temp
+#                 temp = 0
+print(allTable)
+print(max,min,(len(allTable)//2+1))
