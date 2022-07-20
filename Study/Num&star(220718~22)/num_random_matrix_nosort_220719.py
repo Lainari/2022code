@@ -71,7 +71,7 @@ for table in range(5):
                     rowList[row][col-1] = temp
                     temp = 0
 # #=======================================================================================#
-# # 2) 행 기준
+# 2) 행 기준
 colList=[]
 colData=[]
 for value in range(5):
