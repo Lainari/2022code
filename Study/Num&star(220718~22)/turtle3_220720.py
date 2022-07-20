@@ -7,28 +7,62 @@ drone = turtle.Turtle()
 
 count = 1
 drone.speed(0)
-drone.screen.bgcolor("Black") # 배경색 변경(검정)
-
-colorList=["GRAY","WHITE","GRAY"]
-
-for index in range(3):
-    drone.setposition(0,-300+(index*5))
-    drone.color(colorList[index]) # 펜 색상
-    drone.width(3) # 펜 굵기 3
-    drone.circle(300) # 현 위치 기준 반지름 50픽셀 원 출력
-    drone.color("")
-    drone.setposition(0,0)
+drone.screen.bgcolor("oldlace") # 배경색 변경(검정)
 
 drone.width(1) # 펜 굵기 1
-while count <= 540:
+
+drone.setposition(0,0)
+drone.color("BLUE")
+for index in range(60):
+    for value in range(12):
+        drone.forward(80)
+        drone.right(30)
+    drone.right(6)
+
+drone.setposition(0,0)
+drone.color("SKYBLUE")
+for index in range(60):
+    for value in range(8):
+        drone.forward(120)
+        drone.right(45)
+    drone.right(6)
+
+
+drone.setposition(0,0)
+drone.color("AQUA")
+for index in range(60):
+    for value in range(4):
+        drone.forward(200)
+        drone.right(90)
+    drone.right(6)
+
+
+while count <= 360:
     if count % 3 == 0:
         drone.color("OLIVE")
         drone.forward(200)
+        drone.right(1)
     else:
-        drone.forward(180)
+        drone.forward(195)
         drone.color("KHAKI")
         drone.right(1)
     drone.setposition(0,0)
     count += 1
+drone.setposition(0,0)
+drone.color("WHITE")
+for index in range(60):
+    for value in range(5):
+        drone.forward(300)
+        drone.right(144)
+    drone.right(6)
+
+drone.setposition(0,0)
+drone.color("GOLD")
+for index in range(60):
+    for value in range(100):
+        drone.forward(10)
+        drone.right(3.6)
+    drone.right(6)
+
 
 turtle.done()
